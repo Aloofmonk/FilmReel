@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto+Slab&display=swap');
+
+/* Animation for moving components and items from 150px to the right to its original position and also its opacity */
+@keyframes trans {
+  from {
+    opacity: 0.5;
+    transform: translate(150px, 0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+/* Animation for moving components and items from 1000% to the bottom, to its original position and also its opacity */
+@keyframes trans-watch-list {
+  from {
+    opacity: 0;
+    transform: translate(0, 1000%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+/* This is for scrolling horizontally with the vertical scroll hidden */
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+/* This makes the horizontal scroll bar withless and transparent */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+body{
+  background-image: url("https://media.geeksforgeeks.org/wp-content/uploads/rk.png");
+  background: rgba(198, 195, 195, 0.15);
+  background-size: contain;
+  height: 100vh;
+  color: #fff;
+}
+
+.heading{
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.88);
+  height: 170px;
+}
+
+.fixed{
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: 300;
+  animation-name: trans;
+  animation-duration: 3s;
+}
+
+.span-red {
+  color: rgba(244, 7, 7, 0.7);
+}
+
+.movie-icon{
+  margin-left: 5px;
+  font-size: 1.2em;
+}
+
+.search-icon-style {
+  color: rgba(244, 7, 7, 0.7);
+}
+
+.watch-icon-style {
+  color: rgba(244, 7, 7, 0.7);
+}
+
+.icons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+  animation-name: trans;
+  animation-duration: 3s;
+}
+
+.sub-icons {
+  margin-left: 300px;
+}
+
+.search-icon {
+  margin-left: 50px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.search-icon:hover {
+  transform: scale(1.3);
+}
+
+.search-icon:active {
+  color: rgba(244, 7, 7, 0.7);
+}
+
+.watch-icon {
+  margin-left: 75px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.watch-icon:hover {
+  transform: scale(1.3);
+}
+
+.watch-icon:active {
+  color: rgba(244, 7, 7, 0.7);
+}
+
+.search {
+  margin-right: 450px;
+}
+
+.input {
+  font-size: 1.5em;
+  font-family: 'Noto Sans', sans-serif;
+  border-radius: 40px;
+  border: none;
+  padding: 5px 220% 10px 25px;
+  outline: none;
+  transition: all 0.8s;
+}
+
+.inputv {
+  font-size: 1.5em;
+  font-family: 'Noto Sans', sans-serif;
+  border-radius: 40px;
+  /* text-align: left; */
+  border: none;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  margin-right: -5px;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.movie{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.filmreel .row {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-top: 20px;
+}
+
+h2{
+  margin-bottom: 20px;
+  z-index: 100;
+  margin-left: 10px;
+  font-family: 'Noto Sans', sans-serif;
+  color: rgba(0,0,0,1);
+}
+
+.movie-h2{
+  animation-name: trans;
+  animation-duration: 3s;
+
+}
+
+img{
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+  /* display: none; */
+}
+
+.img-movie{
+  top: 50px;
+  display: flex;
+  column-gap: 35px;
+}
+
+.wrapper{
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  /* border: 1px black solid; */
+  transition: all 0.3s ease-in-out;
+  animation-name: trans;
+  animation-duration: 2s;
+}
+
+.wrapper:hover{
+  transform: translate(0, -5%);
+}
+
+.button {
+  position: absolute;
+  bottom: 30%;
+  left: 0px;
+  right: 0px;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px 15px;
+  border-radius: 10px;
+  background: rgb(192, 15, 15);
+  opacity: 0;
+  transition: bottom 0.4s ease;
+  cursor: pointer;
+}
+
+.delete{
+  position: absolute;
+  bottom: 30%;
+  left: 0px;
+  right: 0px;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px 15px;
+  border-radius: 10px;
+  background: rgb(192, 15, 15);
+  opacity: 0;
+  transition: bottom 0.4s ease;
+  cursor: pointer;
+}
+
+.wrapper:hover .button{
+  position: absolute;
+  bottom: 15%;
+  left: 0px;
+  right: 0px;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px 15px;
+  opacity: 1;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: #2230b1;
+  color: wheat;
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out, transform 0.1s, box-shadow 0.1s ease-in, background 0s, border 0s;
+}
+
+.wrapper:hover .delete{
+  position: absolute;
+  bottom: 15%;
+  left: 0px;
+  right: 0px;
+  font-size: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px 15px;
+  opacity: 1;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: #c80909;
+  color: wheat;
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out, transform 0.1s, box-shadow 0.5s, background 0s, border 0s;
+}
+
+.wrapper:hover .button:active{
+  background: rgba(15, 30, 192, 0.3);
+  border: 1px solid #059dbb;
+  color: wheat;
+  transform: translate(7px, 7px);
+  box-shadow: none;
+}
+
+.btn {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+}
+
+.wrapper:hover img{
+  opacity: 0.9;
+  border-radius: 25px;
+  transform: translate(0, -2%);
+}
+
+.container {
+  margin-top: 200px;
+}
+
+.container-2 {
+  animation-name: trans-watch-list;
+  animation-duration: 3s;
+  transition: all 0.5s ease-in-out;
+}
+
+.container-2-style {
+  margin-top: 200px;
+}
+
+.container-watch-list {
+  display: none;
+}
+
+.empty-message{
+  display: none;
+}
+
+.empty-message-display{
+  /* visibility: visible; */
+  display: inline-block;
+}
